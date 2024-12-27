@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.Getter;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Entity
 @Getter
@@ -15,8 +14,8 @@ public class LectureDate {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-//    @Column(name = "lecture_id")
-//    private Long lectureId;
+    @Column(name = "lecture_id")
+    private Long lectureId;
     @Column(name = "lecture_date")
     private LocalDateTime lectureDate;
     @Column(name = "deadline_date")
@@ -26,7 +25,4 @@ public class LectureDate {
     @Column(name = "application_available_yn")
     private Boolean applicationAvailableYn;
 
-//    @ManyToOne
-//    @JoinColumn(name = "lecture_id")
-//    private Lecture lecture;
 }

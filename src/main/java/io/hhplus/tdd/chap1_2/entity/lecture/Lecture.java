@@ -1,6 +1,6 @@
 package io.hhplus.tdd.chap1_2.entity.lecture;
 
-import io.hhplus.tdd.chap1_2.dto.LectureDto;
+import io.hhplus.tdd.chap1_2.entity.userinfo.UserInfo;
 import jakarta.persistence.*;
 import lombok.Getter;
 
@@ -18,8 +18,12 @@ public class Lecture {
     private Long id;
     @Column(name = "lecture_title")
     private String lectureTitle;
-    @Column(name = "lecture_id")
-    private Long lecturerId;
+//    @Column(name = "lecturer_id")
+//    private Long lecturerId;
+
+    @ManyToOne
+    @JoinColumn(name = "lecturer_id", insertable = false, updatable = false)
+    private UserInfo userInfo;
 
     @OneToMany(mappedBy = "id", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<LectureDate> lectureDate = new ArrayList<>();
