@@ -9,8 +9,8 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import static io.hhplus.tdd.chap1_2.entity.lecture.QLecture.lecture;
-import static io.hhplus.tdd.chap1_2.entity.userinfo.QUserInfo.userInfo;
+import static io.hhplus.tdd.chap1_2.domain.entity.lecture.QLecture.lecture;
+import static io.hhplus.tdd.chap1_2.domain.entity.userinfo.QUserInfo.userInfo;
 
 public class LectureRepositoryImpl implements LectureRepositoryCustom {
 
