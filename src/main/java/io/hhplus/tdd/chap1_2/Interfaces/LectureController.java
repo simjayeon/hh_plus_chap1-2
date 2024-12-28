@@ -1,11 +1,11 @@
-package io.hhplus.tdd.chap1_2.controller;
+package io.hhplus.tdd.chap1_2.Interfaces;
 
-import io.hhplus.tdd.chap1_2.dto.ApplicationLogDto;
-import io.hhplus.tdd.chap1_2.dto.LectureDto;
-import io.hhplus.tdd.chap1_2.dto.ReqApplicationLectureDto;
+import io.hhplus.tdd.chap1_2.Interfaces.dto.ApplicationLogDto;
+import io.hhplus.tdd.chap1_2.Interfaces.dto.LectureDto;
+import io.hhplus.tdd.chap1_2.Interfaces.dto.ReqApplicationLectureDto;
 import io.hhplus.tdd.chap1_2.enums.ApplicationStateType;
-import io.hhplus.tdd.chap1_2.service.ApplicationService;
-import io.hhplus.tdd.chap1_2.service.LectureService;
+import io.hhplus.tdd.chap1_2.domain.service.ApplicationService;
+import io.hhplus.tdd.chap1_2.domain.service.LectureService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;

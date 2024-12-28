@@ -1,6 +1,6 @@
-package io.hhplus.tdd.chap1_2.entity.lecture;
+package io.hhplus.tdd.chap1_2.domain.entity.lecture;
 
-import io.hhplus.tdd.chap1_2.entity.userinfo.UserInfo;
+import io.hhplus.tdd.chap1_2.domain.entity.userinfo.UserInfo;
 import jakarta.persistence.*;
 import lombok.Getter;
 

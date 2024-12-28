@@ -1,6 +1,6 @@
-package io.hhplus.tdd.chap1_2.dto;
+package io.hhplus.tdd.chap1_2.Interfaces.dto;
 
-import io.hhplus.tdd.chap1_2.entity.lecture.LectureDate;
+import io.hhplus.tdd.chap1_2.domain.entity.lecture.LectureDate;
 import io.hhplus.tdd.chap1_2.enums.ApplicationAvailableType;
 import lombok.Builder;
 import lombok.Data;

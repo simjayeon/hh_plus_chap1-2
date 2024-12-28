@@ -1,16 +1,16 @@
-package io.hhplus.tdd.chap1_2.service;
+package io.hhplus.tdd.chap1_2.domain.service;
 
-import io.hhplus.tdd.chap1_2.dto.ApplicationLogDto;
-import io.hhplus.tdd.chap1_2.dto.LectureDateDto;
-import io.hhplus.tdd.chap1_2.dto.LectureDto;
-import io.hhplus.tdd.chap1_2.entity.lecture.Lecture;
-import io.hhplus.tdd.chap1_2.entity.userinfo.ApplicationLog;
-import io.hhplus.tdd.chap1_2.entity.userinfo.UserInfo;
+import io.hhplus.tdd.chap1_2.Interfaces.dto.ApplicationLogDto;
+import io.hhplus.tdd.chap1_2.Interfaces.dto.LectureDateDto;
+import io.hhplus.tdd.chap1_2.Interfaces.dto.LectureDto;
+import io.hhplus.tdd.chap1_2.domain.entity.lecture.Lecture;
+import io.hhplus.tdd.chap1_2.domain.entity.userinfo.ApplicationLog;
+import io.hhplus.tdd.chap1_2.domain.entity.userinfo.UserInfo;
 import io.hhplus.tdd.chap1_2.enums.ApplicationAvailableType;
 import io.hhplus.tdd.chap1_2.enums.ApplicationStateType;
-import io.hhplus.tdd.chap1_2.repository.ApplicationLogRepository;
-import io.hhplus.tdd.chap1_2.repository.LectureRepository;
-import io.hhplus.tdd.chap1_2.repository.UserInfoRepository;
+import io.hhplus.tdd.chap1_2.infrastructure.jpa.ApplicationLogRepository;
+import io.hhplus.tdd.chap1_2.infrastructure.jpa.LectureRepository;
+import io.hhplus.tdd.chap1_2.infrastructure.jpa.UserInfoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;

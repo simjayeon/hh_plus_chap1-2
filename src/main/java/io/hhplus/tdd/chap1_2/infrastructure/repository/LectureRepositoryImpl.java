@@ -1,8 +1,8 @@
-package io.hhplus.tdd.chap1_2.repository;
+package io.hhplus.tdd.chap1_2.infrastructure.repository;
 
-import io.hhplus.tdd.chap1_2.Interfaces.LectureRepositoryCustom;
+import io.hhplus.tdd.chap1_2.domain.repository.LectureRepositoryCustom;
 import com.querydsl.jpa.impl.JPAQueryFactory;
-import io.hhplus.tdd.chap1_2.entity.lecture.Lecture;
+import io.hhplus.tdd.chap1_2.domain.entity.lecture.Lecture;
 import jakarta.persistence.EntityManager;
 
 import java.time.LocalDate;

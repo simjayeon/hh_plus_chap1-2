@@ -1,14 +1,14 @@
-package io.hhplus.tdd.chap1_2.repository;
+package io.hhplus.tdd.chap1_2.infrastructure.repository;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
-import io.hhplus.tdd.chap1_2.Interfaces.ApplicationLogRepositoryCustom;
-import io.hhplus.tdd.chap1_2.entity.userinfo.ApplicationLog;
+import io.hhplus.tdd.chap1_2.domain.repository.ApplicationLogRepositoryCustom;
+import io.hhplus.tdd.chap1_2.domain.entity.userinfo.ApplicationLog;
 import jakarta.persistence.EntityManager;
 
 import java.util.List;
 
-import static io.hhplus.tdd.chap1_2.entity.userinfo.QApplicationLog.applicationLog;
-import static io.hhplus.tdd.chap1_2.entity.userinfo.QUserInfo.userInfo;
+import static io.hhplus.tdd.chap1_2.domain.entity.userinfo.QApplicationLog.applicationLog;
+import static io.hhplus.tdd.chap1_2.domain.entity.userinfo.QUserInfo.userInfo;
 
 public class ApplicationLogRepositoryImpl implements ApplicationLogRepositoryCustom {
 

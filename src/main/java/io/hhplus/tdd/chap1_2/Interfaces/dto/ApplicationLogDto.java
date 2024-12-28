@@ -1,6 +1,6 @@
-package io.hhplus.tdd.chap1_2.dto;
+package io.hhplus.tdd.chap1_2.Interfaces.dto;
 
-import io.hhplus.tdd.chap1_2.entity.userinfo.ApplicationLog;
+import io.hhplus.tdd.chap1_2.domain.entity.userinfo.ApplicationLog;
 import io.hhplus.tdd.chap1_2.enums.ApplicationStateType;
 import lombok.Builder;
 import lombok.Data;

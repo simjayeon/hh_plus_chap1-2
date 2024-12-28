@@ -1,7 +1,6 @@
-package io.hhplus.tdd.chap1_2.Interfaces;
+package io.hhplus.tdd.chap1_2.domain.repository;
 
-import io.hhplus.tdd.chap1_2.entity.lecture.Lecture;
-import io.hhplus.tdd.chap1_2.entity.userinfo.ApplicationLog;
+import io.hhplus.tdd.chap1_2.domain.entity.userinfo.ApplicationLog;
 
 import java.util.List;
 

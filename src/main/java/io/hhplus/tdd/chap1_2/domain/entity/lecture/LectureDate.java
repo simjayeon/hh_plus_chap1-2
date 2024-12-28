@@ -1,4 +1,4 @@
-package io.hhplus.tdd.chap1_2.entity.lecture;
+package io.hhplus.tdd.chap1_2.domain.entity.lecture;
 
 import jakarta.persistence.*;
 import lombok.Data;

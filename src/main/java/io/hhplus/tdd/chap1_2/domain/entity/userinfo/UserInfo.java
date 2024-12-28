@@ -1,4 +1,4 @@
-package io.hhplus.tdd.chap1_2.entity.userinfo;
+package io.hhplus.tdd.chap1_2.domain.entity.userinfo;
 
 
 import jakarta.persistence.*;

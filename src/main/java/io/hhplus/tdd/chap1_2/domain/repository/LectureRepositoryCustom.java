@@ -1,6 +1,6 @@
-package io.hhplus.tdd.chap1_2.Interfaces;
+package io.hhplus.tdd.chap1_2.domain.repository;
 
-import io.hhplus.tdd.chap1_2.entity.lecture.Lecture;
+import io.hhplus.tdd.chap1_2.domain.entity.lecture.Lecture;
 
 import java.util.List;
 

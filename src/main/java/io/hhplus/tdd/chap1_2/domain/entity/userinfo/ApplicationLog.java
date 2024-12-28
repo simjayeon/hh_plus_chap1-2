@@ -1,7 +1,7 @@
-package io.hhplus.tdd.chap1_2.entity.userinfo;
+package io.hhplus.tdd.chap1_2.domain.entity.userinfo;
 
-import io.hhplus.tdd.chap1_2.entity.lecture.Lecture;
-import io.hhplus.tdd.chap1_2.entity.lecture.LectureDate;
+import io.hhplus.tdd.chap1_2.domain.entity.lecture.Lecture;
+import io.hhplus.tdd.chap1_2.domain.entity.lecture.LectureDate;
 import jakarta.persistence.*;
 import lombok.Data;
 
