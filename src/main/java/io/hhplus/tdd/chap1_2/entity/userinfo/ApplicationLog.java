@@ -1,15 +1,17 @@
 package io.hhplus.tdd.chap1_2.entity.userinfo;
 
 import jakarta.persistence.*;
-import lombok.Getter;
+import lombok.Data;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Entity
-@Getter
+@Data
+@Table(name = "application_log")
 public class ApplicationLog {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
     @Column(name = "lecture_id")
@@ -21,5 +23,9 @@ public class ApplicationLog {
     @Column(name = "state")
     private String state;
     @Column(name = "application_date")
-    private Date applicationDate;
+    private LocalDateTime applicationDate;
+
+    public ApplicationLog() {
+    }
+
 }

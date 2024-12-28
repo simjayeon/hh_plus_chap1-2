@@ -11,5 +11,7 @@ import java.util.List;
 @Repository
 public interface ApplicationLogRepository extends JpaRepository<ApplicationLog, Long> {
 
-    List<ApplicationLog> findApplicationLogsByUserId(Long userId);
+    List<ApplicationLog> findApplicationLogsByUserIdAndState(Long userId, String state);
+
+    List<ApplicationLog> findApplicationLogsByUserIdAndLectureId(Long userId, Long lectureId);
 }

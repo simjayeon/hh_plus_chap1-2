@@ -4,6 +4,8 @@ import io.hhplus.tdd.chap1_2.dto.LectureDateDto;
 import io.hhplus.tdd.chap1_2.dto.LectureDto;
 import io.hhplus.tdd.chap1_2.entity.lecture.Lecture;
 import io.hhplus.tdd.chap1_2.entity.userinfo.ApplicationLog;
+import io.hhplus.tdd.chap1_2.enums.ApplicationAvailableType;
+import io.hhplus.tdd.chap1_2.enums.ApplicationStateType;
 import io.hhplus.tdd.chap1_2.repository.ApplicationLogRepository;
 import io.hhplus.tdd.chap1_2.repository.LectureRepository;
 import lombok.RequiredArgsConstructor;
@@ -24,7 +26,7 @@ public class LectureService {
     public ResponseEntity<List<LectureDto>> getApplicationAvailableLectureList(Long userId, String lectureDate) {
 
         // 신청자 로그 조회
-        List<ApplicationLog> applicationLogs = applicationLogRepository.findApplicationLogsByUserId(userId);
+        List<ApplicationLog> applicationLogs = applicationLogRepository.findApplicationLogsByUserIdAndState(userId, ApplicationStateType.SUCCESS.name());
 
         // 강의 목록 조회
         List<Lecture> lectureList = lectureRepository.findAllByLectureDate(lectureDate);

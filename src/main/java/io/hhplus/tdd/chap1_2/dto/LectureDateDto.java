@@ -1,7 +1,7 @@
 package io.hhplus.tdd.chap1_2.dto;
 
 import io.hhplus.tdd.chap1_2.entity.lecture.LectureDate;
-import io.hhplus.tdd.chap1_2.service.ApplicationAvailableType;
+import io.hhplus.tdd.chap1_2.enums.ApplicationAvailableType;
 import lombok.Builder;
 import lombok.Data;
 

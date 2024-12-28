@@ -1,12 +1,12 @@
 package io.hhplus.tdd.chap1_2.entity.lecture;
 
 import jakarta.persistence.*;
-import lombok.Getter;
+import lombok.Data;
 
 import java.time.LocalDateTime;
 
 @Entity
-@Getter
+@Data
 @Table(name = "lecture_date")
 public class LectureDate {
 
