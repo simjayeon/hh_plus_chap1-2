@@ -1,11 +1,15 @@
 package io.hhplus.tdd.chap1_2.service;
 
 import io.hhplus.tdd.chap1_2.dto.ReqApplicationLectureDto;
+import io.hhplus.tdd.chap1_2.entity.lecture.Lecture;
 import io.hhplus.tdd.chap1_2.entity.lecture.LectureDate;
 import io.hhplus.tdd.chap1_2.entity.userinfo.ApplicationLog;
+import io.hhplus.tdd.chap1_2.entity.userinfo.UserInfo;
 import io.hhplus.tdd.chap1_2.enums.ApplicationStateType;
 import io.hhplus.tdd.chap1_2.repository.ApplicationLogRepository;
 import io.hhplus.tdd.chap1_2.repository.LectureDateRepository;
+import io.hhplus.tdd.chap1_2.repository.LectureRepository;
+import io.hhplus.tdd.chap1_2.repository.UserInfoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -21,19 +25,23 @@ public class ApplicationService {
 
     private final ApplicationLogRepository applicationLogRepository;
     private final LectureDateRepository lectureDateRepository;
+    private final LectureRepository lectureRepository;
+    private final UserInfoRepository userInfoRepository;
 
     public ResponseEntity<ApplicationStateType> setApplicationLecture(ReqApplicationLectureDto req) {
+        Lecture lecture = lectureRepository.findById(req.getLectureId()).orElse(null);
+        LectureDate lectureDate = lectureDateRepository.findById(req.getLectureDateId()).orElse(null);
+        UserInfo userInfo = userInfoRepository.findById(req.getUserId()).orElse(null);
 
-        // dto 만들기
         // 특강 신청 가능 여부 확인
-        List<ApplicationLog> applicationLogList = applicationLogRepository.findApplicationLogsByUserIdAndLectureId(req.getUserId(), req.getLectureId());
+        List<ApplicationLog> applicationLogList = applicationLogRepository.findApplicationLogsByUserInfoAndLectureId(userInfo, req.getLectureId());
 
         if (!CollectionUtils.isEmpty(applicationLogList)) {
             // 로그 기록
             ApplicationLog applicationLog = new ApplicationLog();
-            applicationLog.setLectureId(req.getLectureId());
-            applicationLog.setLectureDateId(req.getLectureDateId());
-            applicationLog.setUserId(req.getUserId());
+            applicationLog.setLecture(lecture);
+            applicationLog.setLectureDate(lectureDate);
+            applicationLog.setUserInfo(userInfo);
             applicationLog.setState(ApplicationStateType.FAILED.name());
             applicationLog.setApplicationDate(LocalDateTime.now());
             applicationLogRepository.save(applicationLog);
@@ -42,9 +50,9 @@ public class ApplicationService {
 
         // 로그 기록
         ApplicationLog applicationLog = new ApplicationLog();
-        applicationLog.setLectureId(req.getLectureId());
-        applicationLog.setLectureDateId(req.getLectureDateId());
-        applicationLog.setUserId(req.getUserId());
+        applicationLog.setLecture(lecture);
+        applicationLog.setLectureDate(lectureDate);
+        applicationLog.setUserInfo(userInfo);
         applicationLog.setState(ApplicationStateType.SUCCESS.name());
         applicationLog.setApplicationDate(LocalDateTime.now());
         applicationLogRepository.save(applicationLog);
@@ -56,8 +64,8 @@ public class ApplicationService {
         }
 
         // 특강 신청자 카운트 업데이트
-        LectureDate lectureDate = lectureDateDto.get();
-        lectureDate.setApplicationUserCount(lectureDate.getApplicationUserCount() + 1);
+        LectureDate lectureDateUpdate = lectureDateDto.get();
+        lectureDateUpdate.setApplicationUserCount(lectureDate.getApplicationUserCount() + 1);
 
         if (lectureDate.getApplicationUserCount() > 30) {
             return ResponseEntity.ok(ApplicationStateType.FAILED);

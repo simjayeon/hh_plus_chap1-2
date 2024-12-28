@@ -1,5 +1,6 @@
 package io.hhplus.tdd.chap1_2.controller;
 
+import io.hhplus.tdd.chap1_2.dto.ApplicationLogDto;
 import io.hhplus.tdd.chap1_2.dto.LectureDto;
 import io.hhplus.tdd.chap1_2.dto.ReqApplicationLectureDto;
 import io.hhplus.tdd.chap1_2.enums.ApplicationStateType;
@@ -8,7 +9,6 @@ import io.hhplus.tdd.chap1_2.service.LectureService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -35,8 +35,18 @@ public class LectureController {
      * TODO - 특강 신청
      */
     @PostMapping("/application")
-    public ResponseEntity<ApplicationStateType> setApplicationLecture(@Validated @RequestBody ReqApplicationLectureDto req) {
+    public ResponseEntity<ApplicationStateType> setApplicationLecture(@RequestBody ReqApplicationLectureDto req) {
         return applicationService.setApplicationLecture(req);
     }
+
+    /**
+     * TODO - 특강 신청 로그 조회
+     */
+    @GetMapping("/application/log")
+    public ResponseEntity<List<ApplicationLogDto>> getApplicationAvailableLectureList(@RequestParam(required = false) Long userId,
+                                                                                      @RequestParam(required = false) Long lectureId) {
+        return lectureService.getLectureApplicationLogList(userId, lectureId);
+    }
+
 
 }
